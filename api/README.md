@@ -51,3 +51,13 @@ Functions that are responsible for returning values for fields that exist on Typ
 ## Mutation
 
 A **Type** on a Schema that defines operations clients can perform to mutate data (create, update, delete).
+
+### Enums
+
+* A set of discrete values that can be used in place of Scalars.
+* An enum field must resolve to one of the values in the Enum. Great for limiting a field to only a few different options.
+
+### Interfaces
+
+* Abstract Types that can’t be used as field values but instead used as foundations for explicit Types.
+* Great for when you have Types that share common fields, but differ slightly.
