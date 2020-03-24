@@ -1,7 +1,32 @@
 {
   "user": {
     "id": "jBWMVGjm50l6LGwepDoty",
-    "username": "frontendmaster"
+    "username": "infantito"
   },
-  "pet": []
+  "pet": [
+    {
+      "id": "1",
+      "createdAt": "4567891324165",
+      "name": "Shakur",
+      "type": "Dog"
+    },
+    {
+      "id": "2",
+      "createdAt": "4564651324884",
+      "name": "Biggie",
+      "type": "Dog"
+    },
+    {
+      "id": "3",
+      "createdAt": "4567891312312",
+      "name": "Eazy",
+      "type": "Dog"
+    },
+    {
+      "id": "4",
+      "createdAt": "4874212452317",
+      "name": "Minino",
+      "type": "Cat"
+    }
+  ]
 }

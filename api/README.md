@@ -37,6 +37,17 @@ Functions that are responsible for returning values for fields that exist on Typ
 * Just like Types, but used for Arguments
 * All field value types must be other Input Types or Scalars
 
+### Scalars
+
+* Int: A signed 32‐bit integer.
+* Float: A signed double-precision floating-point value.
+* String: A UTF‐8 character sequence.
+* Boolean: true or false.
+* ID: The ID scalar type represents a unique identifier, often used to refetch an object or as the key for a cache. The ID type is serialized in the same way as a String; however, defining it as an ID signifies that it is not intended to be human‐readable.
+
+> In most GraphQL service implementations, there is also a way to specify custom scalar types. For example, we could define a Date type:
+> scalar `Date`
+
 ## Mutation
 
 A **Type** on a Schema that defines operations clients can perform to mutate data (create, update, delete).

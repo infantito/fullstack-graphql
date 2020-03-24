@@ -23,7 +23,8 @@
     "react-spinners": "^0.8.1"
   },
   "scripts": {
-    "server": "node api/src/server.js",
+    "demo": "nodemon api/demo.js",
+    "server": "nodemon api/src/server.js",
     "app": "parcel client/index.html --out-dir client/dist",
     "test-server": "jest api/tests"
   },
@@ -46,6 +47,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "jest": "^25.1.0",
+    "nodemon": "~2.0.2",
     "parcel": "^1.12.4"
   }
 }
