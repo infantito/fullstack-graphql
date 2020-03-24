@@ -27,6 +27,12 @@
       "createdAt": "4874212452317",
       "name": "Minino",
       "type": "Cat"
+    },
+    {
+      "id": "iCuBGkFnJdobobeB4z9to",
+      "createdAt": 1585071888919,
+      "name": "Ice Cube",
+      "type": "Dog"
     }
   ]
 }

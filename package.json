@@ -40,6 +40,10 @@
       "last 1 safari version"
     ]
   },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": ["client/*", "dist/*"]
+  },
   "devDependencies": {
     "@playlyfe/gql": "^2.6.2",
     "babel-core": "^6.26.3",
