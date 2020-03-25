@@ -61,3 +61,8 @@ A **Type** on a Schema that defines operations clients can perform to mutate dat
 
 * Abstract Types that can’t be used as field values but instead used as foundations for explicit Types.
 * Great for when you have Types that share common fields, but differ slightly.
+
+### Unions
+
+* Like interfaces, but without any defined common fields amongst the Types.
+* Useful when you need to access more than one disjoint Type from one Query, like a search.

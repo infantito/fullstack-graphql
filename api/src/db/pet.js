@@ -6,6 +6,7 @@ const createPetModel = db => {
       return db
         .get('pet')
         .filter(filter)
+        .orderBy(['createdAt'], ['desc'])
         .value();
     },
 
@@ -24,6 +25,15 @@ const createPetModel = db => {
         .write();
 
       return newPet;
+    },
+
+    update(pet) {
+      db.get('pet')
+        .find({ id: pet.id })
+        .assign({ type: pet.type, name: pet.name })
+        .write();
+
+      return pet;
     },
   };
 };

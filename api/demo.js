@@ -2,6 +2,8 @@ const gql = require('graphql-tag');
 const { ApolloServer } = require('apollo-server');
 
 const typeDefs = gql`
+  # union Footwear = Sneaker | Boot
+
   enum ShoeType {
     JORDAN
     NIKE
@@ -12,23 +14,26 @@ const typeDefs = gql`
   type User {
     email: String!
     avatar: String
-    friends: [User]!
+    shoes: [Shoe]!
   }
 
   interface Shoe {
     brand: ShoeType!
     size: Int!
+    user: User!
   }
 
   type Sneaker implements Shoe {
     brand: ShoeType!
     size: Int!
+    user: User!
     sport: String!
   }
 
   type Boot implements Shoe {
     brand: ShoeType!
     size: Int!
+    user: User!
     hasGrip: Boolean!
   }
 
@@ -52,26 +57,41 @@ const typeDefs = gql`
   }
 `;
 
+const user = {
+  id: Date.now(),
+  email: 'infantito@gmail.com',
+  avatar: 'https://avatars0.githubusercontent.com/u/9045302',
+  shoes: [],
+};
+
+const shoes = [
+  { brand: 'NIKE', size: 12, sport: 'Basketball', user: Date.now() },
+  { brand: 'TIMBERLAND', size: 14, hasGrip: true, user: Date.now() },
+];
+
 const resolvers = {
   Query: {
     me() {
       return {
+        id: Date.now(),
         email: 'infantito@gmail.com',
         avatar: 'https://avatars0.githubusercontent.com/u/9045302',
-        friends: [],
+        shoes: [],
       };
     },
     shoes(_, { input }) {
-      return [
-        { brand: 'NIKE', size: 12, sport: 'Basketball' },
-        { brand: 'TIMBERLAND', size: 14, hasGrip: true },
-      ];
+      return shoes;
       // .filter(shoe => (input ? shoe.brand === input.brand : true));
     },
   },
   Mutation: {
     newShoe(_, { input }) {
       return input;
+    },
+  },
+  User: {
+    shoes() {
+      return shoes;
     },
   },
   Shoe: {
@@ -81,6 +101,23 @@ const resolvers = {
       return 'Boot';
     },
   },
+  Sneaker: {
+    user(shoe) {
+      return user;
+    },
+  },
+  Boot: {
+    user(shoe) {
+      return user;
+    },
+  },
+  // Footwear: {
+  //   __resolveType(shoe) {
+  //     if (shoe.sport) return 'Sneaker';
+
+  //     return 'Boot';
+  //   },
+  // },
 };
 
 const server = new ApolloServer({

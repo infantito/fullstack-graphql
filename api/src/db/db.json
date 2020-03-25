@@ -6,33 +6,45 @@
   "pet": [
     {
       "id": "1",
-      "createdAt": "4567891324165",
+      "createdAt": 4567891324165,
       "name": "Shakur",
-      "type": "Dog"
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
     },
     {
       "id": "2",
-      "createdAt": "4564651324884",
+      "createdAt": 4564651324884,
       "name": "Biggie",
-      "type": "Dog"
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
     },
     {
       "id": "3",
-      "createdAt": "4567891312312",
+      "createdAt": 4567891312312,
       "name": "Eazy",
-      "type": "Dog"
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
     },
     {
       "id": "4",
-      "createdAt": "4874212452317",
+      "createdAt": 4874212452317,
       "name": "Minino",
-      "type": "Cat"
+      "type": "CAT",
+      "user": "jBWMVGjm50l6LGwepDoty"
     },
     {
       "id": "iCuBGkFnJdobobeB4z9to",
       "createdAt": 1585071888919,
       "name": "Ice Cube",
-      "type": "Dog"
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "EqA_8SG4jvxJDHoCVi6sJ",
+      "createdAt": 1585170865683,
+      "name": "Balto",
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
     }
   ]
 }
