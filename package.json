@@ -9,6 +9,7 @@
     "apollo-link-http": "^1.5.16",
     "apollo-server": "^2.11.0",
     "babel-plugin-emotion": "^10.0.29",
+    "emotion": "~10.0.27",
     "flexboxgrid": "^6.3.1",
     "graphql": "^14.6.0",
     "graphql-tag": "^2.10.3",
@@ -25,7 +26,7 @@
   "scripts": {
     "demo": "nodemon api/demo.js",
     "server": "nodemon api/src/server.js",
-    "app": "parcel client/index.html --out-dir client/dist",
+    "app": "parcel serve client/index.html --out-dir client/dist --port 3000",
     "test-server": "jest api/tests"
   },
   "browserslist": {
@@ -42,7 +43,10 @@
   },
   "nodemonConfig": {
     "verbose": true,
-    "ignore": ["client/*", "dist/*"]
+    "ignore": [
+      "client/*",
+      "dist/*"
+    ]
   },
   "devDependencies": {
     "@playlyfe/gql": "^2.6.2",

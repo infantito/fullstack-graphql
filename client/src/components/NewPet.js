@@ -6,18 +6,21 @@ const options = [
   { value: 'DOG', label: 'Dog' },
 ];
 
-export default function NewPet({ onSubmit, onCancel }) {
+export default function NewPet({
+  handleSubmit: onSubmit,
+  handleCancel: onCancel,
+}) {
   const [type, setType] = useState('DOG');
   const [name, setName] = useState('');
 
   const activeOption = options.find(o => o.value === type);
 
-  const submit = e => {
+  const handleChange = ({ value }) => setType(value);
+  const handleSubmit = e => {
     e.preventDefault();
     onSubmit({ name, type });
   };
-
-  const cancel = e => {
+  const handleCancel = e => {
     e.preventDefault();
     onCancel();
   };
@@ -26,11 +29,11 @@ export default function NewPet({ onSubmit, onCancel }) {
     <div className="new-pet page">
       <h1>New Pet</h1>
       <div className="box">
-        <form onSubmit={submit}>
+        <form onSubmit={handleSubmit}>
           <Select
             value={activeOption}
             defaultValue={options[0]}
-            onChange={e => setType(e.value)}
+            onChange={handleChange}
             options={options}
           />
 
@@ -42,7 +45,7 @@ export default function NewPet({ onSubmit, onCancel }) {
             onChange={e => setName(e.target.value)}
             required
           />
-          <a className="error button" onClick={cancel}>
+          <a className="error button" onClick={handleCancel}>
             cancel
           </a>
           <button type="submit" name="submit">
