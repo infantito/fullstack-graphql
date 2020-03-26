@@ -39,17 +39,32 @@ export default function Pets() {
         data: { pets: [addPet, ...pets] },
       });
     },
+    // if you put optimisticResponse here as well,
+    // then it will be rewritten by the mutation optimisticResponse
+    // optimisticResponse: {},
   });
 
   const handleSubmit = input => {
     setModal(false);
-    createPet({ variables: { newPet: input } });
+    createPet({
+      variables: { newPet: input },
+      optimisticResponse: {
+        __typename: 'Mutation',
+        addPet: {
+          __typename: 'Pet',
+          id: Date.now().toString(36),
+          name: input.name,
+          type: input.type,
+          img: `https://source.unsplash.com/300x300/?${input.type.toLowerCase()}`,
+        },
+      },
+    });
   };
   const handleCancel = _ => setModal(false);
   const handleModal = _ => setModal(true);
 
-  if (loading || newPet.loading) return <Loader />;
-  if (error || newPet.error) return <Issue />;
+  if (loading) return <Loader />;
+  if (error || newPet.error) return <Issue error={error || newPet.error} />;
 
   if (modal) {
     return (
