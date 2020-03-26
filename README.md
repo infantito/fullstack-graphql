@@ -6,9 +6,4 @@ This course comes with some [slides](https://docs.google.com/presentation/d/1IrG
 
 ## What you'll
 
-* Node version >= 6
-
-## Solutions
-
-The solution branch has the completed course fo reference. There is no one way to finish this course.
-`git checkout solution`
+* Node version >= 8
