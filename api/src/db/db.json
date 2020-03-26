@@ -45,6 +45,20 @@
       "name": "Balto",
       "type": "DOG",
       "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "5uHbG3rR3qVNsLhSaHdct",
+      "createdAt": 1585247291998,
+      "name": "Michi",
+      "type": "CAT",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "dyNXQfBnSBA_5GJwyOTsk",
+      "createdAt": 1585254180809,
+      "name": "Garfield",
+      "type": "CAT",
+      "user": "jBWMVGjm50l6LGwepDoty"
     }
   ]
 }
