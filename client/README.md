@@ -34,3 +34,5 @@
 * All nodes are stored flat by an unique ID.
 * Unique ID is defaulted to .id or ._id from nodes. You can change this.
 * Every node should send an .id or ._id, or none at all. Or you have to customize that logic.
+
+### [Check me out](https://static.frontendmasters.com/resources/2019-10-14-full-stack-graphql/client-graphql-react.pdf)
