@@ -68,6 +68,10 @@ export default function Pets() {
           name: input.name,
           type: input.type,
           img: `https://source.unsplash.com/300x300/?${input.type.toLowerCase()}`,
+          owner: {
+            username: 'infantito',
+            __typename: 'User',
+          },
         },
       },
     });
@@ -87,8 +91,6 @@ export default function Pets() {
       </div>
     );
   }
-
-  console.log(data.pets[0]);
 
   return (
     <div className="page pets-page">
